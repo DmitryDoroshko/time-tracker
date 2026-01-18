@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { createEntry, getEntries } from "../services/entries.service";
+import { EntriesService } from "../services/entries.service";
 import { entrySchema } from "../validators/entry.schema";
 
 export class EntriesController {
   static getEntries = async (_req: Request, res: Response) => {
-    const entries = await getEntries();
+    const entries = await EntriesService.getEntries();
     res.json(entries);
   };
 
@@ -16,7 +16,7 @@ export class EntriesController {
     }
 
     try {
-      const entry = await createEntry({
+      const entry = await EntriesService.createEntry({
         ...parsed.data,
         date: new Date(parsed.data.date),
       });

@@ -1,5 +1,4 @@
 # ⏱️ Time Tracker App
-
 A full-stack time tracking web application that allows users to log work hours per project, view daily history, and enforce a strict **maximum of 24 hours per calendar day**.
 
 Built with modern, production-ready technologies for scalability and maintainability.
@@ -93,7 +92,54 @@ npm run dev
 ### 6 Frontend will run at
 http://localhost:3000
 
+### 7 Folder Structure (Both Client & Server)
+```
+time-tracker/
+├── `client/`
+│   └── `src/`
+│       ├── `api/`
+│       │   └── `entries.ts`
+│       ├── `app/`
+│       │   ├── `favicon.ico`
+│       │   ├── `globals.css`
+│       │   ├── `layout.tsx`
+│       │   ├── `page.tsx`
+│       │   ├── `providers.tsx`
+│       │   └── `theme.ts`
+│       ├── `components/`
+│       │   ├── `EntryHistory/`
+│       │   │   └── `EntryHistory.tsx`
+│       │   └── `TimeEntryForm/`
+│       │       └── `TimeEntryForm.tsx`
+│       └── `types/`
+│           ├── `entry.ts`
+│           └── `form.ts`
+└── `server/`
+├── `prisma/`
+│   ├── `schema.prisma`
+│   └── `migrations/`
+│       ├── `migration_lock.toml`
+│       └── `20260118082909_init/`
+│           └── `migration.sql`
+└── `src/`
+├── `app.ts`
+├── `index.ts`
+├── `prisma.ts`
+├── `controllers/`
+│   └── `entries.controller.ts`
+├── `routes/`
+│   └── `entries.routes.ts`
+├── `services/`
+│   └── `entries.service.ts`
+└── `validators/`
+└── `entry.schema.ts`
+```
+
+### 8 How App looks
 ![application image](img.png)
+
+
+
 
 
 

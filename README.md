@@ -84,7 +84,8 @@ Backend will run at:
 http://localhost:4000
 
 ### 5 Frontend Setup (Next.js)
-```cd ../client
+```
+cd ../client
 npm install
 npm run dev
 ```

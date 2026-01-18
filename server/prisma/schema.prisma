@@ -1,0 +1,19 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model TimeEntry {
+  id          Int      @id @default(autoincrement())
+  date        DateTime
+  project     String
+  hours       Float
+  description String
+  createdAt   DateTime @default(now())
+
+  @@index([date])
+}
